@@ -9,12 +9,11 @@ var RainbowDancer = function(top, left, timeBetweenSteps) {
 
 
 
-
 };
 
 RainbowDancer.prototype = Object.create(Dancer.prototype);
 RainbowDancer.prototype.constructor = RainbowDancer;
-RainbowDancer.prototype.oldStep = RainbowDancer.prototype.step;
+RainbowDancer.prototype.dancerStep = RainbowDancer.prototype.step;
 RainbowDancer.prototype.getRandomColor = function() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -26,10 +25,9 @@ RainbowDancer.prototype.getRandomColor = function() {
 
 RainbowDancer.prototype.step = function() {
 
-  this.oldStep();
+  this.dancerStep();
 
   var color = this.getRandomColor();
   this.$node.css('border-color', color);
   // New stuff
 };
-

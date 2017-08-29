@@ -16,6 +16,7 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  border-bottom: 20px;
 }
 .title{
   background-color: #777;
@@ -24,4 +25,10 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.danceFloor{
+  padding: 5px;
+  margin: 5px;
+  height: 100%;
+  display: block;
 }
