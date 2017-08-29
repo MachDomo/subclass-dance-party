@@ -34,19 +34,19 @@ describe('rainbowDancer', function() {
 
   describe('dance', function() {
     it('should change the color every second', function() {
-      var color1 = rainbowDancer.$node.css("border-color");
-      var color4 = rainbowDancer.$node.css("border-color");
+      var color1 = rainbowDancer.$node.css('border-color');
+      var color4 = rainbowDancer.$node.css('border-color');
       expect(color1).to.be.equal(color4);
 
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       clock.tick(timeBetweenSteps);
 
-      var color2 = rainbowDancer.$node.css("border-color");
+      var color2 = rainbowDancer.$node.css('border-color');
       expect(color1).to.not.be.equal(color2);
 
       clock.tick(timeBetweenSteps);
 
-      var color3 = rainbowDancer.$node.css("border-color");
+      var color3 = rainbowDancer.$node.css('border-color');
       expect(color2).to.not.be.equal(color3);
     });
   });

@@ -29,7 +29,7 @@ RainbowDancer.prototype.step = function() {
   this.oldStep();
 
   var color = this.getRandomColor();
-  this.$node.css("border-color", color);
+  this.$node.css('border-color', color);
   // New stuff
 };
 
