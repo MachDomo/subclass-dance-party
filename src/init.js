@@ -32,7 +32,15 @@ $(document).ready(function() {
       dancerNumber
     );
     $('div.danceFloor').append(dancer.$node);
+    window.dancers.push(dancer);
     dancerNumber++;
+  });
+
+  $('.lineUpButton').on('click', function() {
+    console.log('button clicked!');
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
   });
 });
 

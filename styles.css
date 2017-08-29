@@ -7,7 +7,7 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color:lightblue;
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -16,7 +16,6 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
-  border-bottom: 20px;
 }
 .title{
   background-color: #777;
@@ -27,8 +26,6 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .danceFloor{
-  padding: 5px;
-  margin: 5px;
-  height: 100%;
-  display: block;
+  height:100%;
+  position:relative;
 }
