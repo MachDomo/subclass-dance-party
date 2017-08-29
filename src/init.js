@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(
       $('div.danceFloor').height() * Math.random(),
-      $('div.danceFloor').width() * Math.random(),
+      ($('div.danceFloor').width() - 27) * Math.random(),
       Math.random() * 1000,
       dancerNumber
     );
@@ -42,10 +42,10 @@ $(document).ready(function() {
     var left = 0;
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp(top, left);
-      left += 27;
-      if (left > $('div.danceFloor').width()) {
+      left += 29;
+      if (left > $('div.danceFloor').width() - 27) {
         left = 0;
-        top += 27;
+        top += 29;
       }
     }
   });

@@ -28,7 +28,7 @@ RainbowDancer.prototype.step = function() {
   this.dancerStep();
 
   var color = this.getRandomColor();
-  this.$node.css('border-color', color);
+  //this.$node.css('border-color', color);
   this.$node.css('background-color', color);
   // New stuff
 };

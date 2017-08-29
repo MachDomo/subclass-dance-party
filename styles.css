@@ -21,7 +21,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:1px solid red;
+  border:1px solid black;
   text-align:center;
   background-color: red;
   height:25px;
@@ -32,4 +32,8 @@ body, a:link, a:visited, a:active{
 .danceFloor{
   height:100%;
   position:relative;
+  background-image: url('src/danceFloorImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
