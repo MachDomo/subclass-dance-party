@@ -8,6 +8,7 @@ var Dancer = function(top, left, timeBetweenSteps, dancerNumber) {
   //'<span class="dancer"></span>'); `<span class="dancer" id=${dancerNumber}></span>`
   this.timeBetweenSteps = timeBetweenSteps;
 
+
   this.step();
 
 
@@ -36,7 +37,12 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
-Dancer.prototype.lineUp = function(top) {
-  console.log('Line up!');
-  this.$node.css('float', 'left');
+Dancer.prototype.lineUp = function(top, left) {
+  //console.log('Line up!');
+  //this.$node.wrap('<div class="dancer"></div>');
+  this.setPosition(top, left);
+  // $('.dancer').css({'float': 'left'});
+  // Height of each dancer is 25px;
+  // $('div.danceFloor').height()
 };
+

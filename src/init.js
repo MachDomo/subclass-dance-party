@@ -38,8 +38,15 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', function() {
     console.log('button clicked!');
+    var top = 0;
+    var left = 0;
     for (var i = 0; i < window.dancers.length; i++) {
-      window.dancers[i].lineUp();
+      window.dancers[i].lineUp(top, left);
+      left += 27;
+      if (left > $('div.danceFloor').width()) {
+        left = 0;
+        top += 27;
+      }
     }
   });
 });
