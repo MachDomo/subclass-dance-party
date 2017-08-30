@@ -68,18 +68,74 @@ $(document).ready(function() {
   });
 
   $('.gitDownButton').on('click', function() {
+
+
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].gitDown();
+
+      // Calculate distance
+      //
+
     }
+    for (var j = 0; j < window.dancers.length - 1; j++) {
+      let y0 = +window.dancers[j].$node.css('top').slice(0, -2);
+      let x0 = +window.dancers[j].$node.css('left').slice(0, -2);
+
+      let y1 = +window.dancers[j + 1].$node.css('top').slice(0, -2);
+      let x1 = +window.dancers[j + 1].$node.css('left').slice(0, -2);
+      let distance = Math.sqrt((Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2)));
+      let closest = window.dancers[j + 1];
+
+      for (var i = j + 2; i < window.dancers.length; i++) {
+        let y1 = +window.dancers[i].$node.css('top').slice(0, -2);
+        let x1 = +window.dancers[i].$node.css('left').slice(0, -2);
+        let newdistance = Math.sqrt((Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2)));
+
+        if (newdistance < distance) {
+          distance = newdistance;
+          closest = window.dancers[i];
+        }
+      }
+
+      y1 = +closest.$node.css('top').slice(0, -2);
+      x1 = +closest.$node.css('left').slice(0, -2);
+
+      let top = (y0 + y1) / 2;
+
+      let left = (x0 + x1) / 2;
+
+      let midpoint0 = {
+        top: top,
+        left: left - 13.5
+      };
+
+      let midpoint1 = {
+        top: top,
+        left: left + 13.5
+      };
+      console.log(midpoint0);
+      console.log(midpoint1);
+
+      window.dancers[j].$node.animate(midpoint0, 'slow');
+      closest.$node.animate(midpoint1, 'slow');
+    }
+
+
+
+
+
+
+
+
+
+
 
     //var obj = document.createElement("audio");
     var obj = new Audio();
-    obj.src="src/PlayFunky.m4a";
-    obj.volume=0.90;
-    obj.autoPlay=false;
-    obj.preLoad=true;
-
-
+    obj.src = 'src/PlayFunky.m4a';
+    obj.volume = 0.90;
+    obj.autoPlay = false;
+    obj.preLoad = true;
     obj.play();
 
 

@@ -53,10 +53,12 @@ Dancer.prototype.lineUp = function(top, left) {
 Dancer.prototype.gitDown = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  console.log('gitting Down');
+  //console.log('gitting Down');
   setTimeout(this.gitDown.bind(this), this.timeBetweenSteps);
   // Dancer.prototype.step.call(this);
-  this.$node.slideToggle();
+
+  // Should call lineUp(top, left);
+  //this.$node.slideToggle();
 
 };
 
