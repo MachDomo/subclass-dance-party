@@ -40,7 +40,11 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.lineUp = function(top, left) {
   //console.log('Line up!');
   //this.$node.wrap('<div class="dancer"></div>');
-  this.setPosition(top, left);
+  var loc = {};
+  loc.top = top;
+  loc.left = left;
+
+  this.$node.animate(loc, 'slow');
   // $('.dancer').css({'float': 'left'});
   // Height of each dancer is 25px;
   // $('div.danceFloor').height()

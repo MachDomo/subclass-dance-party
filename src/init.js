@@ -38,7 +38,7 @@ $(document).ready(function() {
 
   $('body').on('mouseover', '.dancer', function(event) {
     var directions = ['left', 'right', 'top', 'bottom'];
-    var index = Math.floor(4*Math.random());
+    var index = Math.floor(4 * Math.random());
     var direction = directions[index];
     var move = {};
     move[direction] = '+=27px';
