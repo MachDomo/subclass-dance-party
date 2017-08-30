@@ -36,8 +36,25 @@ $(document).ready(function() {
     dancerNumber++;
   });
 
+  $('body').on('mouseover', '.dancer', function(event) {
+    var directions = ['left', 'right', 'top', 'bottom'];
+    var index = Math.floor(4*Math.random());
+    var direction = directions[index];
+    var move = {};
+    move[direction] = '+=27px';
+    $(this).animate(move);
+  });
+
+  $('body').on('click', '.dancer', function(event) {
+
+    var location = {};
+    location.top = $('div.danceFloor').height() * Math.random() + 'px';
+    location.left = ($('div.danceFloor').width() - 27) * Math.random() + 'px';
+
+    $(this).animate(location, 'slow');
+  });
+
   $('.lineUpButton').on('click', function() {
-    console.log('button clicked!');
     var top = 0;
     var left = 0;
     for (var i = 0; i < window.dancers.length; i++) {
@@ -49,5 +66,7 @@ $(document).ready(function() {
       }
     }
   });
+
+
 });
 

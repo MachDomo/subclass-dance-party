@@ -29,6 +29,9 @@ body, a:link, a:visited, a:active{
   border-radius:25px;
   position:absolute;
 }
+.dancer:hover {
+  cursor: pointer;
+}
 .danceFloor{
   height:100%;
   position:relative;
