@@ -67,6 +67,23 @@ $(document).ready(function() {
     }
   });
 
+  $('.gitDownButton').on('click', function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].gitDown();
+    }
+
+    //var obj = document.createElement("audio");
+    var obj = new Audio();
+    obj.src="src/PlayFunky.m4a";
+    obj.volume=0.90;
+    obj.autoPlay=false;
+    obj.preLoad=true;
+
+
+    obj.play();
+
+
+  });
 
 });
 
